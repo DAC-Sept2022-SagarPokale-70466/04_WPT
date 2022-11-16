@@ -1,0 +1,33 @@
+
+
+.outerContainer{
+    border: 1px solid black;
+    height: 80%;
+    height: 500px;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    background: linear-gradient(rgb(241, 163, 163), rgb(241, 102, 144)) ;
+}
+
+.red{
+    border: 1px solid black;
+    height: 200px;
+    width: 200px;
+    background-color: red;
+    margin: 15px;
+}
+
+.blue{
+    border: 1px solid black;
+    height: 200px;
+    width: 200px;
+    background-color: blue;
+    margin: 15px;
+}
+
+.invisible{
+    display: none;
+}

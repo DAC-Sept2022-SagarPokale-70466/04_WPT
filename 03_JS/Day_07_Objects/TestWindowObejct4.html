@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>Test Window Object</title>
+</head>
+<body>
+    <input type="button" id="btnStart" value="Start Counting" onclick="Start()">
+
+    <input type="button" id="btnStop" value="Stop Counting" onclick="Stop()" disabled="disabled">
+    <hr>
+    <!-- <div id="myDiv" style="height:200px; width:200px; background-color: red;">
+    </div> -->
+    <img id="myDiv" src="car.jpg" style="margin:0px">
+    <div id="myDiv" style="margin:0px;height:50px; background-color: black;">
+    </div>
+    <script>
+        var refToBtnStart = 
+                document.getElementById("btnStart");
+        var refToBtnStop = 
+                document.getElementById("btnStop");
+        var refToMyDiv = 
+                document.getElementById("myDiv");
+
+        var counter = 0;
+        var  tokenNo =  undefined;
+
+        function Start()
+        {
+          tokenNo= window.setInterval(Increase,100);
+          refToBtnStop.disabled = null;
+          refToBtnStart.disabled = 'disabled';
+        }
+
+        function Stop()
+        {
+            window.clearInterval(tokenNo);
+            refToBtnStop.disabled = 'disabled';
+            refToBtnStart.disabled = null;
+        }
+
+        function Increase()
+        {
+            counter = counter + 1;
+            refToMyDiv.style.marginLeft = counter + "px";
+        }
+
+        function Disturb()
+        {
+            alert("Let me disturb!");
+        }
+
+
+    </script>
+</body>
+</html>

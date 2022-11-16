@@ -1,0 +1,191 @@
+<!-- @Developer : Sagar_Pokale
+@Date_Time : 2022-11-16 14:14:00 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Control HTML 5</title>
+</head>
+
+<body>
+
+    Name : <input type="text" id="txtName">
+    <br>
+    <div id="errorName" style="color: red;"></div>
+
+    <br>
+
+    Gender : <input type="radio" name="gender" value=1> Male
+    <input type="radio" name="gender" value="2"> Female
+    <input type="radio" name="gender" value="3"> Other
+    <br>
+    <div id="errorGender" style="color: red;"></div>
+
+    <br>
+
+    Country : <select id="country">
+        <option value="-1">Select Country</option>
+        <option value="91">India</option>
+        <option value="92">USA</option>
+        <option value="93">UK</option>
+        <option value="94">AST</option>
+    </select>
+    <br>
+    <div id="errorCountry" style="color: red;"></div>
+
+    Hobbies : 
+        <input type="checkbox" name="hobbie" value="101"> Cricket
+        <input type="checkbox" name="hobbie"  value="102"> Football
+        <input type="checkbox" name="hobbie" value="103"> Book Reading
+        <input type="checkbox" name="hobbie" value="104"> Bike Riding
+        
+        <div id="errorHobbie" style="color: red;"></div>
+
+    <br>
+
+    <input type="checkbox" name="term" id="term" onchange="AgreementChanged()"> Agree Terms and Conditions
+    <br>
+    <div id="errorDivForAgr" style="color: red;"></div>
+
+    <!-- <input type="checkbox" name="country" id="1">India -->
+
+
+    <br><br>
+    <input type="button" value="Check Details" id="btn" onclick="Submit()" disabled>
+
+    <script>
+        function Submit() {
+
+            CheckName();
+            checkGender();
+            checkCountry();
+            checkHobbie();
+            CheckAgreeOrNot();
+        }
+
+        function AgreementChanged()
+        {
+                var refTochkAgree = document.getElementById("term");
+                var refTobtnCheck = document.getElementById("btn");
+
+                if(refTochkAgree.checked==true)
+                {
+                    refTobtnCheck.disabled = null;
+                    console.log("Thank you for agreement")
+                }
+                else
+                {
+                    refTobtnCheck.disabled = 'disabled';
+                    console.log("Maan Jao");
+                }
+            }
+
+        function CheckName() {
+            var name = document.getElementById("txtName");
+            if (name.value == '') {
+                document.getElementById("errorName").innerText = `Enter Your Name`;
+            }
+            else {
+                document.getElementById("errorName").innerText = '';
+                console.log(document.getElementById("txtName").value)
+            }
+        }
+
+        function checkGender() {
+            var gender = document.getElementsByName("gender");
+            // debugger
+            var errorGender = document.getElementById("errorGender");
+            var genderSelected = false;
+            for (i = 0; i < gender.length; i++) {
+                var refGender = gender[i];
+
+                if (refGender.checked) {
+                    errorGender.innerText = '';
+                    genderSelected = true;
+                    console.log("You Have send the by value by String" + refGender.value);
+                    console.log(`You Have send the value to the server is : ${refGender.value}`);
+                    break;
+                }
+
+                if (genderSelected == false)
+                    errorGender.innerText = "Please Enter Your Gender";
+            }
+        }
+
+        function checkCountry() {
+            // debugger;
+            var country = document.getElementById("country");
+            var errorCountry = document.getElementById("errorCountry");
+
+            if (country.value == '-1') {
+                errorCountry.innerText = "Enter Your Country";
+            }
+            else {
+                errorCountry.innerText = '';
+                console.log(`You have Enter ${country.value}`);
+            }
+        }
+
+        function checkHobbie(){
+
+            var hobbie = document.getElementsByName("hobbie");
+            var errorhobbie = document.getElementById("errorHobbie");
+            var newHobbieRef = '';
+
+            for(i = 0; i < hobbie.length; i++){
+                var refHobbie = hobbie[i];
+
+                if(refHobbie.checked){
+                    newHobbieRef = newHobbieRef + refHobbie.value;
+                }
+                
+            }
+            if(newHobbieRef == '')
+                errorhobbie.innerText = "Please Enter at least 1 Hobbie";
+
+            else{
+                errorhobbie.innerText = '';
+                console.log(`Your hobbies are ${newHobbieRef}`);
+            }
+        }
+
+        function checkAgree(){
+
+            var checkAgree = document.getElementById("term");
+            var submitBtn = document.getElementById("btn");
+
+            if(checkAgree.checked == true){
+                submitBtn.disabled = false;
+                console.log("Thank you for agreement")
+            }
+            else{
+                submitBtn.disabled = true;
+                console.log("Please Check agreement")
+            }
+        }
+
+        function CheckAgreeOrNot()
+        {
+            var refTochkAgree = document.getElementById("term");
+            var refToerrorDivForAgr = 
+                                document.getElementById("errorDivForAgr");
+
+            if(refTochkAgree.checked == true)
+            {
+                console.log("Thank you for agreement")
+                refToerrorDivForAgr.innerText = "";
+            }
+            else
+            {
+                refToerrorDivForAgr.innerText = "Please Agree to terms and conditions";
+            }
+        }
+        
+    </script>
+</body>
+
+</html>

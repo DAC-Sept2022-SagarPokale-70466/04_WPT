@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+    <style>
+        .container{
+            height: 200px;
+            width: 200px;
+            margin: 5px;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        .img{
+            height: 140px;
+            width: 120px;
+            align-items: center;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container" style="border: 2px solid black; display: flex; flex-wrap: wrap; justify-content: center;">
+    
+        <!-- Creating the id class by JS -->
+
+    </div>
+
+
+
+    <script>
+    
+        var Person =[
+
+                {No : 1, Name : "Tom", City : "Pune", Photo : "img/1.jpg" },
+                {No : 2, Name : "Jerry", City : "Pune", Photo : "img/2.png" },
+                {No : 3, Name : "Pickachu", City : "Pune", Photo : "img/3.png" },
+                {No : 4, Name : "", City : "Pune", Photo : "img/4.png" },
+                {No : 5, Name : "Tom", City : "Pune", Photo : "img/5.jpg" },
+                {No : 6, Name : "Thanos", City : "Pune", Photo : "img/6.jpg" }
+        ]
+
+
+        var carName = document.getElementById("container");
+
+        for(i = 0; i < Person.length; i++){
+
+            var person = Person[i];
+
+            var content = `<div class="container" id = "${person.No}">
+                                <img src="${person.Photo}" alt="Car" class = "img">
+                                <h3> Name : ${person.Name}</h3>
+                            </div>`;
+
+            carName.innerHTML = carName.innerHTML + content;
+            
+        }
+    </script>
+</body>
+</html>

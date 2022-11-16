@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulate</title>
+</head>
+<body>
+    <input type="button" value="Daaba re" onclick="change()">
+    <br> <br>
+    <div id="chnColor" style="height: 300px; width: 300px; border : 1px solid red; background-color: red;"></div>
+
+
+    <script>
+
+        function change(){
+
+            var getColor = document.getElementById("chnColor");
+
+            if(getColor.style.backgroundColor == "red" || getColor.style.backgroundColor == "blue")
+                getColor.style.backgroundColor = "yellow";
+
+                else{
+                    getColor.style.backgroundColor = "blue";
+                }
+        }
+    </script>
+</body>
+</html>

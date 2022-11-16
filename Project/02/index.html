@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log-in Page</title>
+    <style>
+        div {
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            margin: auto;
+            padding: 50px;
+            box-sizing: border-box;
+
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>Welcome To LogIn Page</h1>
+    </center>
+    <hr>
+
+    <div>
+        Username : <br>
+        <input type="text" name="text" id="username">
+        <br><br>
+        Password : <br>
+        <input type="password" name="text" id="password">
+        <br><br>
+
+        <button onclick="login()">
+            Submit
+        </button>
+
+    </div>
+
+<script type="text/javascript">
+
+    function login(){
+        var uname = document.getElementById('username').value;
+        var pass = document.getElementById('password').value;
+
+        if(uname == "sagar" && pass=="123"){
+            location.assign("file:////G:/C-Dac/4_WBT/ClassWork/Project/02/page.html")
+        }
+        else{
+            window.alert("logIn Failed")
+        }
+    }
+</script>
+
+</body>
+
+</html>

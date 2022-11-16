@@ -1,0 +1,63 @@
+<html>
+<head>
+    <title>Test Window Object</title>
+</head>
+<body>
+    <input type="button" value="Start Counting" onclick="Start()">
+
+    <input type="button" value="Stop Counting" onclick="Stop()">
+
+    <input type="button" value="Disturb" onclick="Disturb()">
+
+    <script>
+        var counter = 0;
+        var allTokenNos = new Array();
+
+        function Start()
+        {
+            //Increase();
+          var  tokenNo =  
+            window.setInterval(Increase,1000);
+
+            allTokenNos.push(tokenNo);
+        
+           console.log(
+            "Queue Started with Token No = "         +tokenNo);
+        }
+
+        function Stop()
+        {
+            //Stop all counter queues
+            // for(var i = 0; i< allTokenNos.length; i++)
+            // {
+            //    window.clearInterval(allTokenNos[i])
+            // }
+
+            var queueNoToClose =  allTokenNos.pop();
+         
+           if(queueNoToClose!=undefined)
+           {
+            console.log("Queue with Token No " + queueNoToClose + " is getting closed..")
+            window.clearInterval(queueNoToClose);
+           }
+           else{
+            console.log("Pehle start to kar,,")
+           }
+
+        }
+
+        function Increase()
+        {
+            counter = counter + 1;
+            console.log(counter);
+        }
+
+        function Disturb()
+        {
+            alert("Let me disturb!");
+        }
+
+
+    </script>
+</body>
+</html>

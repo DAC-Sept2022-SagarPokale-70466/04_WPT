@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+    <style>
+        .container {
+            height: 200px;
+            width: 200px;
+            margin: 5px;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        .img {
+            height: 140px;
+            width: 120px;
+            align-items: center;
+            margin: 5px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="container" style="border: 2px solid black; display: flex; flex-wrap: wrap; justify-content: center;">
+
+        <!-- Creating the id class by JS -->
+
+    </div>
+
+
+    <script>
+
+        var Person = [
+
+            { "id": 1, "email": "george.bluth@reqres.in", "first_name": "George", "last_name": "Bluth", "avatar": "https://reqres.in/img/faces/1-image.jpg" },
+            { "id": 2, "email": "janet.weaver@reqres.in", "first_name": "Janet", "last_name": "Weaver", "avatar": "https://reqres.in/img/faces/2-image.jpg" },
+            { "id": 3, "email": "emma.wong@reqres.in", "first_name": "Emma", "last_name": "Wong", "avatar": "https://reqres.in/img/faces/3-image.jpg" },
+            { "id": 4, "email": "eve.holt@reqres.in", "first_name": "Eve", "last_name": "Holt", "avatar": "https://reqres.in/img/faces/4-image.jpg" },
+            { "id": 5, "email": "charles.morris@reqres.in", "first_name": "Charles", "last_name": "Morris", "avatar": "https://reqres.in/img/faces/5-image.jpg" },
+            { "id": 6, "email": "tracey.ramos@reqres.in", "first_name": "Tracey", "last_name": "Ramos", "avatar": "https://reqres.in/img/faces/6-image.jpg" }
+
+
+        ]
+
+
+
+        var container = document.getElementById("container");
+
+        for (i = 0; i < Person.length; i++) {
+
+            debugger;
+
+            var person = Person[i];
+
+            var contentPrint = `<div id="${person.id}">
+                                    <img src="${person.avatar}" alt="Person"></img>
+                                        <h2>"${person.first_name}"</h2>
+                                        <h3>"${person.email}"</h3>
+                                </div>`;
+
+            container.innerHTML = container.innerHTML + contentPrint;
+
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!-- @Developer : Sagar_Pokale
+@Date_Time : 2022-11-16 16:29:27 --> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Test Canvas</title>
+</head>
+<body>
+    <input type="button" value="Click Me" onclick="Start()">
+    <br>
+    <Canvas id="myCanvas" style="height: 100%; width:100%; background-color: yellow;">
+        Your browser does not understand HTML 5 tags. 
+        Pls upgrade your browser!
+    </Canvas>
+    <br>
+    <div>
+       Content of  DIV Tag
+    </div>
+    <br>
+    <mahesh>
+        Content of Mahesh tag
+    </mahesh>
+    <script>
+        // var refToMyCanvas = document.getElementById("myCanvas");
+        // var refToDimensions =  refToMyCanvas.getContext("2d")
+        // refToDimensions.moveTo(10,10);
+        // refToDimensions.lineTo(50,50);
+        // refToDimensions.stroke();
+
+        var x = 0;
+        var y = 0;
+        var x1 = 0;
+        var y1 = 0; 
+        function Start()
+        {
+            window.setInterval(Draw,100);
+        }
+        function Draw()
+        {
+            var refToMyCanvas = document.getElementById("myCanvas");
+            var refToDimensions =  refToMyCanvas.getContext("2d")
+            //debugger;
+            refToDimensions.lineWidth = 1;
+            refToDimensions.moveTo(x,y);
+            x1 = x + 2;
+            y1 = Math.floor(Math.random() * 100);
+
+            refToDimensions.lineTo(x1, y1);
+            refToDimensions.stroke();
+            x = x1;
+            y = y1;
+
+        }
+
+        debugger;
+    </script>
+</body>
+</html>

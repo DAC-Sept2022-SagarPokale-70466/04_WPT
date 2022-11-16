@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;1,400;1,500&display=swap');
+
+body,input,
+textarea,
+button{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+}
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+body{
+    margin: 0;
+    line-height: 1.5;
+}
+
+.container{
+    max-width: 1170px;
+    margin: auto;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.align-items-center{
+    align-items: center;
+}
+
+.justify-content-between{
+    justify-content: space-between;
+}
+
+/* Header */
+
+.header{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index : 99;
+}
+.header .brand-name{
+    /* background-color: red; */
+    padding:  0 15px;
+}
+
+.header .brand-name a{
+    text-decoration: none;
+    font-size: 30px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 999;
+    letter-spacing: 2px;
+    transition: all 0.5s ease;
+}
+
+.header .brand-name a:hover{
+    color: #FF9800;
+}
+
+.header .nav{
+    /* background-color: grey; */
+    padding:  0 15px;
+}
+
+.header .nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.header .nav ul li{
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.header .nav ul li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    padding: 25px 0;
+    display: block;
+    transition: all 0.5s ease;
+}
+
+.header .nav ul li a:hover{
+    color: #FF9800;
+}
+
+/* Home */
+
+.home-section{
+    min-height: 100vh;
+    /* background-color: aqua; */
+    background-image: url(img/home-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+}
+
+.home-section::before{
+    content: '';
+    position: absolute;
+    box-sizing: border-box;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #000000;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+
+.home-section .row{
+    min-height: 100vh;
+}
+
+.home-section .home-content{
+    /* background-color: red; */
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center ;
+    font-weight: 1500;
+}

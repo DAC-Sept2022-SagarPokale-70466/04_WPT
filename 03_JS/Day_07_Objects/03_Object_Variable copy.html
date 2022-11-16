@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+    <style>
+        .container{
+            height: 200px;
+            width: 200px;
+            margin: 5px;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        .img{
+            height: 140px;
+            width: 120px;
+            align-items: center;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container" style="border: 2px solid black; display: flex; flex-wrap: wrap; justify-content: center;">
+    
+        <!-- Creating the id class by JS -->
+
+    </div>
+
+
+
+    <script>
+
+        var carName = document.getElementById("container");
+
+        for(i = 1; i <= 6; i++){
+            var content = `<div class="container" id = "5">
+                                <img src="car.jpg" alt="Car" class = "img">
+                                <h3> Car ${i}</h3>
+                            </div>`;
+
+            carName.innerHTML = carName.innerHTML + content;
+            
+        }
+    </script>
+</body>
+</html>

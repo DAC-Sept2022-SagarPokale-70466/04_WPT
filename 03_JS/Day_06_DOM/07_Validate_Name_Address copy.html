@@ -1,0 +1,94 @@
+<!-- @Developer : Sagar_Pokale
+@Date_Time : 2022-11-14 16:42:41 -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Validation</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>
+                <input type="text" id="txtName">
+                <div id="errorName" style="color: red;"></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Address</td>
+            <td>
+                <input type="text" id="txtAddress">
+                <div id="errorAddress" style="color: red;"></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" style="text-align: center;">
+                <input type="button" value="Click Here" onclick="validate()">
+            </td>
+        </tr>
+
+    </table>
+
+    <script>
+        // function validate(){
+
+        //     // Validation for Name
+        //     var txtName = document.getElementById("txtName");
+        //     var errorName = document.getElementById("errorName");
+
+        //     if(txtName.value != ""){
+        //         errorName.innerText = "";
+        //         console.log("Hii "+txtName.value);
+        //     }
+        //     else{
+        //         errorName.innerText = "Enter Your Name";
+        //     }
+
+        //     // Validatation For Address
+
+        //     var txtAdd = document.getElementById("txtAddress");
+        //     var errorAdd = document.getElementById("errorAddress");
+
+        //     if(txtAdd.value == "")
+        //         errorAdd.innerText = "Enter Address Please";
+        //     else{
+        //         errorAdd.innerText = "";
+        //         console.log("Heelloo "+txtAdd.value);
+        //     }
+        // }
+
+
+        // OR
+        // In this we have to set both the value if we input only one value 
+        function validate(){
+
+            var txtName = document.getElementById("txtName");
+            var errorTxt = document.getElementById("errorName");
+
+            var txtAdd = document.getElementById("txtAddress");
+            var errorAdd = document.getElementById("errorAddress");
+
+            if(txtName.value != "" && txtAdd.value != ""){
+                errorTxt.innerText = "";
+                errorAdd.innerText = "";
+                console.log("HOLLA "+txtName.value);
+                console.log("Your Address is "+txtAdd.value);
+            }
+            else{
+                errorTxt.innerText = "Enter Name";
+                errorAdd.innerText = "Enter Address";
+            }
+        }
+    </script>
+</body>
+
+</html>

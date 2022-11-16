@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>Test Window Object</title>
+</head>
+<body>
+    <input type="button" id="btnStart" value="Start Counting" onclick="Start()">
+
+    <input type="button" id="btnStop" value="Stop Counting" onclick="Stop()" disabled="disabled">
+
+    <script>
+        var refToBtnStart = 
+                document.getElementById("btnStart");
+        var refToBtnStop = 
+                document.getElementById("btnStop");
+
+        var counter = 0;
+        var  tokenNo =  undefined;
+
+        function Start()
+        {
+          tokenNo= window.setInterval(Increase,1000);
+          refToBtnStop.disabled = null;
+          refToBtnStart.disabled = 'disabled';
+        }
+
+        function Stop()
+        {
+            window.clearInterval(tokenNo);
+            refToBtnStop.disabled = 'disabled';
+            refToBtnStart.disabled = null;
+        }
+
+        function Increase()
+        {
+            counter = counter + 1;
+            console.log(counter);
+        }
+
+        function Disturb()
+        {
+            alert("Let me disturb!");
+        }
+
+
+    </script>
+</body>
+</html>

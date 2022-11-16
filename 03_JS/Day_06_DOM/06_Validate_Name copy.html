@@ -1,0 +1,38 @@
+<!-- @Developer : Sagar_Pokale
+@Date_Time : 2022-11-14 16:42:50 --> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Validation</title>
+</head>
+<body>
+    <input type="text" name="Fname" id="txtFname" required placeholder="Enter Your Name">
+
+    <input type="button" value="Chick Here" onclick="Execute()">
+
+    <div id="errorMsg" style="color: red ;"></div>
+
+    <script>
+
+        function Execute(){
+
+            var txtName = document.getElementById("txtFname");
+
+            var errorMsg = document.getElementById("errorMsg");
+
+            if(txtName.value != ""){
+                errorMsg.innerText = "";
+                console.log("Hii "+txtName.value)
+            }
+            else{
+                errorMsg.innerText = "Name is Required"
+            }
+        }
+
+    </script>
+</body>
+</html>

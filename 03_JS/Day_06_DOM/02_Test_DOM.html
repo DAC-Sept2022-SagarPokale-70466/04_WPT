@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM BASICS</title>
+</head>
+<body>
+    <input type="text" id="txtName" name="Fname" placeholder="E.g. Sagar" required title="Hey There Sagar Here !!">
+
+    <input type="button" value="Click Here" onclick= Execute()>
+
+    <input type="button" value="Clear All" onclick= Clear()>
+
+    <script>
+
+        function Execute(){
+            
+        debugger;
+        var txtName = document.getElementById("txtName");
+        console.log("Holla "+txtName.value);
+        }
+
+        function Clear(){
+        var txtName = document.getElementById("txtName");
+        txtName.value = "";
+        }
+    </script>
+</body>
+</html>
