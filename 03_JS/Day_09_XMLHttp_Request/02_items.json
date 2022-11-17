@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Saurabh",
+        "power": 999,
+        "photo": "img/1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Nishant",
+        "power": 249,
+        "photo": "img/2.png"
+    },
+    {
+        "id": 3,
+        "name": "Sagar",
+        "power": 656,
+        "photo": "img/3.png"
+    },
+    {
+        "id": 4,
+        "name": "Akshay",
+        "power": 455,
+        "photo": "img/4.png"
+    },
+    {
+        "id": 5,
+        "name": "Anukesh",
+        "power": 345,
+        "photo": "img/5.jpg"
+    }
+]

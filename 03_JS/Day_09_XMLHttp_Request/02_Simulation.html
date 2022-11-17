@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Simulation </title>
+
+    <style>
+        .contentDiv {
+            height: 300px;
+            width: 300px;
+            border: 2px solid black;
+            margin: 5px;
+            text-align: center;
+        }
+
+        .contentImage {
+            height: 200px;
+            width: 200px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="myContainer" style="display: flex; border: 2px solid black;flex-wrap: wrap;justify-content: center;">
+
+    </div>
+
+
+    <script>
+
+        var refToDiv = document.getElementById("myContainer");
+
+        var helperToServer = new XMLHttpRequest();
+ 
+        helperToServer.open("GET", "http://127.0.0.1:5500/02_items.json");
+        // http://127.0.0.1:5500/items.json
+
+        helperToServer.send();
+
+        debugger;
+
+        helperToServer.onreadystatechange = () => {
+
+            if (helperToServer.readyState == 4 && helperToServer.status == 200) {
+
+                var responce = JSON.parse(helperToServer.responseText);
+
+                for (var i = 0; i < responce.length; i++) {
+
+                    var printResponce = responce[i];
+
+                    var content = `<div id="${printResponce.id}" class="contentDiv">
+                                        <img src="${printResponce.photo}" class="contentImage">
+                                            <h2>${printResponce.name} </h2>
+                                            <h3>${printResponce.power}</h3>
+                                    </div>`;
+
+                    refToDiv.innerHTML = refToDiv.innerHTML + content;
+                }
+            }
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
