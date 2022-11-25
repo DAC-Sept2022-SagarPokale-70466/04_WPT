@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuary Selectors</title>
+
+        });
+    <style>
+        .myStyle {
+            height: 100px;
+            width: 100px;
+            background-color: yellow;
+        }
+
+        .myStyle2 {
+            height: 150px;
+            width: 150px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="button" id="btn" value="Click Me">
+    <br>
+    <div id="myDiv1" class="myStyle" title="pune">
+        My Div 1
+    </div>
+    <br>
+    <div id="myDiv2" class="myStyle" title="nagpur">
+        My Div 2
+    </div>
+    <br>
+    <div id="myDiv3" class="myStyle2" title="puri">
+        My Div 3
+    </div>
+    <br>
+    <div id="myDiv4" class="myStyle" title="panji">
+        My Div 4
+    </div>
+    <br>
+    <section id="mysection1" class="myStyle">
+        Section tag
+    </section>
+    <br>
+
+
+
+
+
+    <script src="jquery-3.6.1.min.js"></script>
+
+    <script>
+
+        $("#btn").click(() => {
+            // $("#myDiv1").css("background-color", "green");
+            // $("div").css("background-color", "green");
+            // $(".myStyle").css("background-color","green");
+
+            // $("div.myStyle").css("background-color", "green");
+
+            // OR
+
+            // $("div").filter(".myStyle").css("background-color", "green");
+
+
+            // Find the title with name panji
+            $("div[title='panji']").css("background-color", "green");
+
+            // Find hte titie starting with p letter
+            $("div[title^='p']").css("background-color", "green");
+
+            // Find the title ending with i letter
+            $("div[title$='i']").css("background-color", "green");
+
+            // Find the title containing the n letter
+            $("div[title*='n']").css("background-color", "green");
+
+            // Find div filter class myStyle -> title starting with letter p -> apply css bg-color green
+            $("div").filter(".myStyle").filter("[title^='p']").css("background-color", "green");
+        });
+
+    </script>
+
+
+
+</body>
+
+</html>

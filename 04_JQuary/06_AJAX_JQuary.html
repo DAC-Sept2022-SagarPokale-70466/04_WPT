@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX in JQuary</title>
+</head>
+
+<body>
+
+    <input type="button" value="Click" id="btn">
+
+    <hr>
+
+    <table border="1" id="myTable" style="height: 100%; width:100%">
+
+        <!-- New Content will append here -->
+
+    </table>
+
+
+    <script src="jquery-3.6.1.min.js"></script>
+
+    <script>
+
+        // $("#btn").click(function () {
+        //     $.ajax({
+        //         url: "https://reqres.in/api/users",
+        //         method: "GET",
+        //         contentType: "application/JSON",
+        //         success: function (result) {
+        //             // When result become success in this function there will a JSON String
+        //             // debugger;
+        //             var people = result.data;
+
+        //             people.map((person) => {
+        //                 $("#myTable").append(
+        //                     `<tr>
+        //                         <td>${person.id}</td>
+        //                         <td>${person.first_name}</td>
+        //                         <td>${person.last_name}</td>
+        //                         <td>${person.email}</td>                               
+        //                         </tr>`);
+
+        //             })
+        //         },
+        //         error: function () {
+        //             console.log("Error in Your Code");
+        //         }
+
+        //     });
+        // })
+
+
+        //  AJAX 
+
+        $("#btn").click(() => {
+            $.ajax({
+                url: "https://reqres.in/api/users",
+                method: "GET",
+                contentType: "application/JSON",
+                success: (result) => {
+                    var people = result.data;
+
+                    people.map((person) => {
+                        $("#myTable").append(
+                            `<tr>
+                                <td>${person.id}</td>
+                                <td>${person.first_name}</td>
+                                <td>${person.last_name}</td>
+                                <td>${person.email}</td> 
+                                <td><img src=${person.avatar}></img></td>                              
+                                </tr>`);
+                    })
+                },
+                error: () => {
+                    console.log("Error In your Code");
+                }
+            })
+        });
+
+
+    </script>
+
+
+
+</body>
+
+</html>

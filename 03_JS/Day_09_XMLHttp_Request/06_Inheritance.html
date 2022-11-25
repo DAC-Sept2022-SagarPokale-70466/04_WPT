@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // class Person 
+        // {
+        //     constructor(no, name, address)
+        //     {
+        //         this.No = no;
+        //         this.Name = name;
+        //         this.Address = address;
+        //     }
+        //     Print()
+        //     {
+        //         console.log(`No = ${this.No} , Name = ${this.Name}, Address = ${this.Address}`);
+        //     }
+        // }
+
+        // class Employee extends Person
+        // {
+        //     constructor(no, name, address, dept)
+        //     {
+        //         super(no, name, address);
+        //         this.Dept = dept;
+        //     }
+
+
+
+        // }
+
+        // var e1 = new Employee(1, "mahesh", "pune", "IT");
+        // e1.Print();
+        // console.log(e1.Dept)
+    </script>    
+
+    <script>
+        // var Person = function(no, name, address)
+        //                 {
+        //                     this.No = no;
+        //                     this.Name = name;
+        //                     this.Address = address;
+        //                     this.Print = function(){
+        //                     console.log(`No = ${this.No} , Name = ${this.Name}, Address = ${this.Address}`);
+        //                     }
+        //                 }
+
+        // var Employee = function Employee()
+        //                 {
+
+        //                 };
+        // Employee.prototype = Person;
+
+        // var p1 = new Person(1, "mahesh", "pune");
+        // p1.Print();
+    </script>
+
+    <script>
+        var Person = {
+                        No:1,
+                        Name:"Mahesh",
+                        Address: "Pune",
+                        Print: function (){
+                            console.log(this.No + this.Name + this.Address);
+                        }    
+                    }
+        var Employee = {};
+        Employee.__proto__ = Person;
+        debugger;
+        Employee.Print();
+    </script>
+</body>
+</html>

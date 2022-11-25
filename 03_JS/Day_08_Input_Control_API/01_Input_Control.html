@@ -1,4 +1,4 @@
-<!-- @Developer : Sagar_Pokale
+<!-- @Developer : Input COntrol
 @Date_Time : 2022-11-16 14:14:00 -->
 
 <!DOCTYPE html>
@@ -13,7 +13,7 @@
 
 <body>
 
-    Name : <input type="text" id="txtName">
+    Name : <input type="text" id="txtName"> 
     <br>
     <div id="errorName" style="color: red;"></div>
 
@@ -36,14 +36,14 @@
     </select>
     <br>
     <div id="errorCountry" style="color: red;"></div>
+    <br>
+    Hobbies :
+    <input type="checkbox" name="hobbie" value="101"> Cricket
+    <input type="checkbox" name="hobbie" value="102"> Football
+    <input type="checkbox" name="hobbie" value="103"> Book Reading
+    <input type="checkbox" name="hobbie" value="104"> Bike Riding
 
-    Hobbies : 
-        <input type="checkbox" name="hobbie" value="101"> Cricket
-        <input type="checkbox" name="hobbie"  value="102"> Football
-        <input type="checkbox" name="hobbie" value="103"> Book Reading
-        <input type="checkbox" name="hobbie" value="104"> Bike Riding
-        
-        <div id="errorHobbie" style="color: red;"></div>
+    <div id="errorHobbie" style="color: red;"></div>
 
     <br>
 
@@ -52,6 +52,13 @@
     <div id="errorDivForAgr" style="color: red;"></div>
 
     <!-- <input type="checkbox" name="country" id="1">India -->
+
+
+    <table>
+        <tr>
+            <td id="count"> 12</td>
+        </tr>
+    </table>
 
 
     <br><br>
@@ -67,22 +74,19 @@
             CheckAgreeOrNot();
         }
 
-        function AgreementChanged()
-        {
-                var refTochkAgree = document.getElementById("term");
-                var refTobtnCheck = document.getElementById("btn");
+        function AgreementChanged() {
+            var refTochkAgree = document.getElementById("term");
+            var refTobtnCheck = document.getElementById("btn");
 
-                if(refTochkAgree.checked==true)
-                {
-                    refTobtnCheck.disabled = null;
-                    console.log("Thank you for agreement")
-                }
-                else
-                {
-                    refTobtnCheck.disabled = 'disabled';
-                    console.log("Maan Jao");
-                }
+            if (refTochkAgree.checked == true) {
+                refTobtnCheck.disabled = null;
+                console.log("Thank you for agreement")
             }
+            else {
+                refTobtnCheck.disabled = 'disabled';
+                console.log("Maan Jao");
+            }
+        }
 
         function CheckName() {
             var name = document.getElementById("txtName");
@@ -130,61 +134,58 @@
             }
         }
 
-        function checkHobbie(){
+        function checkHobbie() {
 
             var hobbie = document.getElementsByName("hobbie");
             var errorhobbie = document.getElementById("errorHobbie");
             var newHobbieRef = '';
 
-            for(i = 0; i < hobbie.length; i++){
+            for (i = 0; i < hobbie.length; i++) {
                 var refHobbie = hobbie[i];
 
-                if(refHobbie.checked){
+                if (refHobbie.checked) {
                     newHobbieRef = newHobbieRef + refHobbie.value;
                 }
-                
+
             }
-            if(newHobbieRef == '')
+            if (newHobbieRef == '')
                 errorhobbie.innerText = "Please Enter at least 1 Hobbie";
 
-            else{
+            else {
                 errorhobbie.innerText = '';
                 console.log(`Your hobbies are ${newHobbieRef}`);
             }
         }
 
-        function checkAgree(){
+        function checkAgree() {
 
             var checkAgree = document.getElementById("term");
             var submitBtn = document.getElementById("btn");
 
-            if(checkAgree.checked == true){
+            if (checkAgree.checked == true) {
                 submitBtn.disabled = false;
                 console.log("Thank you for agreement")
             }
-            else{
+            else {
                 submitBtn.disabled = true;
                 console.log("Please Check agreement")
             }
         }
 
-        function CheckAgreeOrNot()
-        {
+        function CheckAgreeOrNot() {
             var refTochkAgree = document.getElementById("term");
-            var refToerrorDivForAgr = 
-                                document.getElementById("errorDivForAgr");
+            var refToerrorDivForAgr =
+                document.getElementById("errorDivForAgr");
 
-            if(refTochkAgree.checked == true)
-            {
+            if (refTochkAgree.checked == true) {
                 console.log("Thank you for agreement")
                 refToerrorDivForAgr.innerText = "";
             }
-            else
-            {
+            else {
                 refToerrorDivForAgr.innerText = "Please Agree to terms and conditions";
             }
         }
-        
+
     </script>
 </body>
 

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Button</title>
+</head>
+
+<body>
+    <br>
+    Country : <select id="country" onchange="onCountrySelected()">
+        <option value="-1">Select Country</option>
+        <option value="India">India</option>
+        <option value="UK">UK</option>
+        <option value="USA">USA</option>
+    </select>
+
+    <br><br>
+
+    State : <select id="state">
+
+
+
+    </select>
+
+    <br><br>
+
+    <script>
+
+        var refToCountry = document.getElementById("country");
+        var refToState = document.getElementById("state");
+
+        console.log(refToCountry.value);
+
+        function onCountrySelected() {
+
+            // debugger
+
+            if (refToCountry.value != -1) {
+
+                var selectedCountry = refToCountry.value;
+
+                console.log(selectedCountry);
+
+                var refToConnectServer = new XMLHttpRequest();
+
+                refToConnectServer.onreadystatechange = () => {
+
+                    if (refToConnectServer.readyState == 4 && refToConnectServer.status == 200) {
+
+                        var state = JSON.parse(refToConnectServer.responseText);
+                        state.map((state) => {
+                            var option = `<option value="${state.no}">${state.name}</option>`;
+                            refToState.innerHTML = refToState.innerHTML + option
+                        });
+                        //Iterating throw the whole array using the map  function
+
+                    }
+                };
+
+            refToConnectServer.open("GET", `http://127.0.0.1:5500/03_JS/Day_09_XMLHttp_Request/${selectedCountry}.json`);
+
+            refToState.innerHTML = '';
+                
+            refToConnectServer.send();
+
+            }
+
+        }
+    </script>
+</body>
+
+</html>

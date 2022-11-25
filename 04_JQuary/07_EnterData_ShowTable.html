@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Data And Show Table</title>
+</head>
+
+<body>
+
+    Enter Your Name : <input type="text" id="txtName">
+    <br>
+    Enter Age : <input type="number" id="age">
+
+    <input type="button" value="Click" onclick="AddRecord()">
+
+    <table id="table" style="height: 100%; width: 100px; border: 1px solid brown;">
+
+    </table>
+</body>
+
+<script>
+
+    var refTable = document.getElementById("table");
+
+    function AddRecord() {
+
+        var refName = document.getElementById("txtName");
+        var refAge = document.getElementById("age");
+
+        refTable.innerHTML = refTable.innerHTML + `
+        <tr>
+            <td>${refName.value}</td>
+            <td>${refAge.value}</td>
+        </tr>`;
+
+        refName.value = '';
+        refAge.value = '';
+    }
+</script>
+
+</html>

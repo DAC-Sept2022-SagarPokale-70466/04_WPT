@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Second Page</h1>
+    <div style="background-color: yellow;" id="myDiv">
+
+    </div>
+    <!-- <input type="button" value="Search / Store / Send / Do Something" onclick="GetStoreDetailsFromStorage()"> -->
+
+    <br>
+    <a href="03_Local_Session_Storage.html">Go back to first page</a>
+    <script>
+        function GetStoreDetailsFromStorage() {
+
+            //debugger;
+            var refTomyDiv = document.getElementById("myDiv");
+
+            var name = localStorage.getItem("Name");
+            var likes = localStorage.getItem("Like");
+
+            refTomyDiv.innerText = `${name} likes ${likes}`
+            // window.location.href ="Second.html"
+
+            // sessionStorage.setItem("CName",refTotxtName.value);
+            // sessionStorage.setItem("CLikes",reftxtLike.value);
+
+
+        }
+
+        GetStoreDetailsFromStorage()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuary addEventListener</title>
+</head>
+
+<body>
+
+    <input type="text" id="txtName" value="DAC">
+    <!-- <input type="button" value="Click Me" onclick="DoSomething()"> -->
+
+    <input type="button" id="btn" value="Click Me">
+
+
+
+
+
+
+
+    <script src="jquery-3.6.1.js"></script>
+
+    <script>
+        // var refBtn = document.getElementById("btn");
+        // refBtn.addEventListener("click", DoSomething);
+
+
+        $("#btn").click(DoSomething)
+
+        function DoSomething() {
+            console.log("Hello " + jQuery("#txtName").val())
+        }
+
+
+        // OR
+
+        // $("#btn").click(function () {
+        //     console.log("Hello " + jQuery("#txtName").val())
+        // });
+
+
+        // OR
+
+        $("#btn").click( () =>{
+            console.log("Hello " + jQuery("#txtName").val())
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highlight the row when hover</title>
+
+    <style>
+        /* .myStyle {
+            height: 100px;
+            width: 100px;
+            background-color: yellow;
+        }
+
+        .myStyle2 {
+            height: 150px;
+            width: 150px;
+            background-color: red;
+        } */
+    </style>
+
+</head>
+
+<body>
+
+    <table border="1" style="height: 100%; width:100%">
+
+        <tr>
+            <td>1</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+            <td>Sunbeam</td>
+            <td>Pune</td>
+        </tr>
+
+        <script src="jquery-3.6.1.min.js"></script>
+
+        <script>
+
+            $("tr").mouseover( function(){
+                $(this).css("color","white");
+            })
+
+            // This will point to current instance
+
+            $("tr").mouseout(function(){
+                $(this).css("color", "black");
+            });
+
+            $("tr").click(function(){
+                $(this).css("background-color","grey");
+                $(this).unbind("mouseover mouseout");
+            });
+            // Unbind will close the function of mouseover, mouseout
+
+
+        </script>
+
+    </table>
+
+</body>
+
+</html>
