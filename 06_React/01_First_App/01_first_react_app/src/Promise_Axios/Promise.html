@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function YourFunction() {
+            console.log("Success")
+        }
+
+        function myFunction() {
+            console.log("Failure")
+        }
+
+        function testThePromise(Resolve, Reject) {
+            if (10 < 3) {
+                Resolve();
+            }
+            else {
+                Reject();
+            }
+        }
+
+        var promise = new Promise(testThePromise)
+        promise.then(YourFunction)
+        // promise.then(() =>{console.log("OK OK")})
+       .catch(myFunction)
+
+        // promise.finally(() => { "adsf" })
+        // promise.then(() => { console.log("On success") });
+    </script>
+</body>
+
+</html>

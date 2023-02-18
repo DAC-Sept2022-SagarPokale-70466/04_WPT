@@ -1,0 +1,12 @@
+npm init --yes
+
+1. Change inside the package main Value to "server.js" ->
+     server.js : create a node project with the port no 9898
+
+2. node server.js : to Run the server and the localhost:9898
+
+This is for the plain JS File
+
+install Express 
+
+Afther that see the Screen shot recommended by : Anukesh

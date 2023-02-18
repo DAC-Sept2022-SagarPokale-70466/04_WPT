@@ -1,0 +1,28 @@
+.tableStyle{
+    width: 100%;
+     text-align: center;
+}
+
+.tagLine{
+    color: green;
+}
+
+.tableContaint
+{
+    border: blue;
+    width: 100%;
+}
+
+.sideBar{
+    width:170px;
+    vertical-align: top;
+}
+
+.sideBarTable{
+    height:200px;
+    margin-left: 25px;
+}
+
+.centerData{
+    vertical-align: top;
+}

@@ -1,0 +1,4 @@
+npm install create-react-app
+
+npx create-react-app client : Extraction of the application   
+

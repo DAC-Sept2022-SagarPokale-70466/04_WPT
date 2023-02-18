@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        // var promise = new Promise((Success, Failure)=> {
+        //     if (10 < 5)
+        //         Success();
+        //     else
+        //         Failure();
+        // })
+
+        // promise.then(()=>{console.log("DONE")}).catch(() =>{console.log("Error")})
+        //     .finally(()=>{console.log("In finalaly")})
+        // promise.catch(()=>{console.log("Another")})
+
+
+        function fetchMyData(METHOD, URL) {
+
+            return new Promise((Success, Failure) => {
+
+                var XHR = new XMLHttpRequest();
+                XHR.onreadystatechange = () => {
+                    if (XHR.readyState == 4 && XHR.status == 200) {
+                        var responce = JSON.parse(XHR.responseText)
+                        Success(responce.data);
+                    }
+                }
+                XHR.open(METHOD, URL)
+                XHR.send();
+            });
+        }
+
+        fetchMyData("GET", "https://reqres.in/api/users")
+            .then((data) => { console.log(data) }).catch(() => console.log("Errorr"))
+
+    </script>
+</body>
+
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       function Check(resolve, reject)
+       {
+        var helper = new XMLHttpRequest();
+        helper.onreadystatechange=()=>{
+            if(helper.readyState==4 && helper.status == 200)
+            {
+                var result = 
+                    JSON.parse(helper.responseText);
+                resolve(result.data);
+
+                //some logic to call reject function
+            }
+        };
+        helper.open("GET","https://reqres.in/api/users");
+        helper.send();
+       }
+
+        var promise = new Promise(Check);
+        promise.then((data)=>{
+            debugger;
+        })
+
+    </script>
+</body>
+</html> -->

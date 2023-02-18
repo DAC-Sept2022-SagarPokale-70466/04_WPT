@@ -1,0 +1,18 @@
+install mysql
+
+alter user root@localhost identified with mysql_native_password by 'root';
+
+flush privileges;
+
+
+
+Process manager tool : Express pm2
+
+
+For Frontend building
+yarn build / npm run build
+
+This will create new dir. (build)
+compress it -> Upload it
+
+install apache2

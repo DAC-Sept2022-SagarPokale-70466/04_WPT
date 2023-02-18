@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        UserName : <input type="text" id="txtUserName">
+        Password : <input type="password" id="txtPassword">
+        <input type="button" onclick="login()" value="Login">
+        
+    </center>
+
+    <script>
+        function login(){
+            var refTotxtUserName = document.getElementById("txtUserName");
+            var refTotxtPassword = document.getElementById("txtPassword");
+
+            var userName = refTotxtUserName.value;
+            var password = refTotxtPassword.value;
+
+
+            var helper = new XMLHttpRequest();
+            helper.onreadystatechange =()=>{};
+            helper.open("POST","https://iasys.azurewebsites.net/Auth/Sign");
+            var credentials = window.btoa(userName + ":" + password);
+            helper.setRequestHeader("Authorization","Basic " + credentials)
+            helper.send();
+
+        }
+    </script>
+</body>
+</html>
